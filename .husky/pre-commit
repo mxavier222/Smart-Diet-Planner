@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+pnpm exec tsx scripts/update-agents-index.ts
+git add AGENTS.md
+pnpm lint-staged

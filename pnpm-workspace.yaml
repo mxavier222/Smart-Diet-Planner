@@ -1,0 +1,50 @@
+# ──────────────────────────────────────────────────────────────
+# pnpm supply-chain security settings
+#
+# pnpm v10+ blocks lifecycle scripts (postinstall, etc.) by
+# default — this prevents malicious packages from running code
+# during install. The settings below add additional layers of
+# protection. See: https://pnpm.io/settings
+# ──────────────────────────────────────────────────────────────
+
+packages:
+  - "."
+
+# Which packages are allowed to run build scripts during install.
+# By default pnpm blocks ALL lifecycle scripts. Only packages
+# listed here with `true` will have their scripts executed.
+# esbuild needs this to compile its platform-specific native binary.
+# msw (pulled in by shadcn CLI) tries to copy a service worker
+# file we don't use — explicitly blocked.
+allowBuilds:
+  esbuild: true
+  msw: false
+  sharp: true
+  workerd: true
+
+# Fail installation if any dependency has unreviewed build scripts
+# that aren't covered by allowBuilds above. This is the default
+# in pnpm v11 — we enable it early to be explicit.
+strictDepBuilds: true
+
+# Don't install a package version published less than 4 hours ago.
+# This gives the community time to flag malicious updates before
+# they reach our lockfile. Only matters when adding or updating
+# dependencies — the lockfile pins exact versions for day-to-day
+# installs.
+minimumReleaseAge: 240 # 4 hours in minutes
+
+# Block transitive dependencies from using git repos or tarball
+# URLs as sources. All deps must come from the npm registry.
+blockExoticSubdeps: true
+
+# Prevent installing a package if its trust level has *decreased*
+# compared to an earlier release (e.g. it was previously published
+# by a verified publisher but now lacks provenance). This catches
+# potential account compromises.
+trustPolicy: no-downgrade
+
+# Many older packages predate npm's provenance/attestation system
+# and will never have trust metadata. Ignore trust policy checks
+# for packages whose latest release is older than 90 days.
+trustPolicyIgnoreAfter: 129600 # 90 days in minutes
