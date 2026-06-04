@@ -11,4 +11,9 @@ export default defineConfig({
 		},
 	},
 	plugins: [tanstackRouter(), tailwindcss(), react()],
+	base: "/Smart-Diet-Planner/",
+
+	  build: {
+    minify: false,
+  },
 });
