@@ -1,0 +1,18 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+count.txt
+.env
+.tanstack
+todos.json
+
+# Agent skills — community skills installed via postinstall, never committed
+# Custom skills (add-documentation, git-commit) are tracked
+.agents/skills/*
+!.agents/skills/add-documentation/
+!.agents/skills/git-commit/
+.claude/skills
+.cursor/skills
+.codex/skills
