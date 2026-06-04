@@ -32,7 +32,7 @@ const DEFAULT_PATIENTS: Patient[] = [
 	},
 	{
 		id: "d3e030ae-b0f3-4761-a396-1a9820e9182e",
-		name: "Patient 2",
+		name: "Maria Larsen",
 		cpr: "1212152300",
 		age: 33,
 		height: 160,
@@ -46,7 +46,7 @@ const DEFAULT_PATIENTS: Patient[] = [
 	},
 	{
 		id: "e11b67ed-9ae7-4c0c-b1ca-798e19e033a4",
-		name: "Patient 3",
+		name: "Erik Pedersen",
 		cpr: "9912152346",
 		age: 40,
 		height: 170,
