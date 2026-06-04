@@ -25,7 +25,10 @@ function PatientListPage() {
   };
 
   const handleGeneratePlan = (patientId: string) => {
-    navigate({ to: "/generate-plan", search: (old) => ({ ...old, patientId }) });
+    navigate({
+      to: "/generate-plan",
+      search: (old) => ({ ...old, patientId }),
+    });
   };
 
   // added for M1-11 ISSUE
@@ -39,9 +42,12 @@ function PatientListPage() {
       <div className="mx-auto max-w-5xl p-8">
         <div className="mb-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="mb-6">
-            <h2 className="text-lg font-semibold text-slate-900">How it works</h2>
+            <h2 className="text-lg font-semibold text-slate-900">
+              How it works
+            </h2>
             <p className="mt-2 text-sm text-slate-500 max-w-2xl">
-              Follow these four simple steps to create a tailored meal plan for each patient.
+              Follow these four simple steps to create a tailored meal plan for
+              each patient.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -58,7 +64,9 @@ function PatientListPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-semibold text-white">
                   {index + 1}
                 </div>
-                <p className="text-sm font-semibold text-slate-900">Step {index + 1}</p>
+                <p className="text-sm font-semibold text-slate-900">
+                  Step {index + 1}
+                </p>
                 <p className="text-sm text-slate-600">{stepText}</p>
               </div>
             ))}
@@ -85,7 +93,9 @@ function PatientListPage() {
         {/* Stats bar */}
         <div className="mb-8 grid grid-cols-3 gap-4">
           <div className="rounded-xl border bg-white p-4">
-            <p className="text-2xl font-bold text-blue-700">{patients.length}</p>
+            <p className="text-2xl font-bold text-blue-700">
+              {patients.length}
+            </p>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
               Total Patients
             </p>
@@ -126,7 +136,7 @@ function PatientListPage() {
       {/* Deletion Success Modal */}
       {showDeleteSuccess && (
         <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 w-[280px] shadow-lg text-center">
+          <div className="bg-white rounded-xl p-6 w-70 shadow-lg text-center">
             <h2 className="text-lg font-semibold text-blue-700 mb-6">
               Deleted Successfully
             </h2>

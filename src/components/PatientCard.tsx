@@ -146,7 +146,7 @@ export default function PatientCard({
       {/* Confirmation Modal */}
       {showDeleteModal && (
         <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 w-[350px] shadow-lg">
+          <div className="bg-white rounded-xl p-6 w-87.5 shadow-lg">
             <h2 className="text-lg font-semibold text-slate-900 mb-6">
               Do you confirm?
             </h2>
