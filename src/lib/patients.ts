@@ -18,7 +18,7 @@ const PATIENTS_STORAGE_KEY = "patients_data";
 const DEFAULT_PATIENTS: Patient[] = [
 	{
 		id: "76c14e5f-14a6-4562-b016-b23cbf661134",
-		name: "Daniel Jensen",
+		name: "Patient 1",
 		cpr: "1212152345",
 		age: 35,
 		height: 150,
@@ -32,7 +32,7 @@ const DEFAULT_PATIENTS: Patient[] = [
 	},
 	{
 		id: "d3e030ae-b0f3-4761-a396-1a9820e9182e",
-		name: "Maria Larsen",
+		name: "Patient 2",
 		cpr: "1212152300",
 		age: 33,
 		height: 160,
@@ -46,7 +46,7 @@ const DEFAULT_PATIENTS: Patient[] = [
 	},
 	{
 		id: "e11b67ed-9ae7-4c0c-b1ca-798e19e033a4",
-		name: "Erik Pedersen",
+		name: "Patient 3",
 		cpr: "9912152346",
 		age: 40,
 		height: 170,
